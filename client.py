@@ -7,7 +7,7 @@ def transfer(s,path):
     if os.path.exists(path):    #Checking if the path exists in client computer
         f=open(path,'rb')       
         packet=f.read(1024)     #Reading 1KB from the file
-        while packet!='':   
+        while packet !='':   
             s.send(packet)      #Sending 1KB to server side
             packet=f.read(1024)
         s.send('DONE')
