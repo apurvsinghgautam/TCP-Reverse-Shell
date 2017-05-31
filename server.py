@@ -4,7 +4,7 @@ import socket       #For building TCP Connection
 
 def transfer(conn,command):
     conn.send(command)
-    f=open('/root/Desktop/testfile','wb')
+    f=open('/root/Desktop/testfile.png','wb')
     while True:
         packet=conn.recv(1024)
         if 'Unable to find out the file' in packet:
